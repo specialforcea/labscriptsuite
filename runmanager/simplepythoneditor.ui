@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SimplePythonEditor</class>
+ <widget class="QWidget" name="SimplePythonEditor">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>614</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QToolButton" name="save_toolButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Save this labscript file to disk&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+         <normaloff>:/qtutils/fugue/document--pencil.png</normaloff>:/qtutils/fugue/document--pencil.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>379</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QToolButton" name="sendFilename_toolButton">
+       <property name="toolTip">
+        <string>Make current filename aviable to enclosing program</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+         <normaloff>:/qtutils/fugue/notebook--arrow.png</normaloff>:/qtutils/fugue/notebook--arrow.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="editor_tabWidget">
+     <property name="tabShape">
+      <enum>QTabWidget::Rounded</enum>
+     </property>
+     <property name="usesScrollButtons">
+      <bool>true</bool>
+     </property>
+     <property name="documentMode">
+      <bool>true</bool>
+     </property>
+     <property name="tabsClosable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="goto_line_groupBox">
+     <property name="title">
+      <string>Goto line</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="goto_line_Layout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Line to goto</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="goto_line_spinBox">
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::NoButtons</enum>
+          </property>
+          <property name="keyboardTracking">
+           <bool>true</bool>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+          <property name="singleStep">
+           <number>1</number>
+          </property>
+          <property name="value">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QToolButton" name="goto_line_done_toolButton">
+          <property name="text">
+           <string>Done</string>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
+          </property>
+          <property name="autoRaise">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="find_replace_groupBox">
+     <property name="title">
+      <string>Find/replace</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="6">
+       <widget class="QCheckBox" name="case_sensitive_checkBox">
+        <property name="text">
+         <string>Case sensitive</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QToolButton" name="search_forward_toolButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+          <normaloff>:/qtutils/fugue/arrow-skip.png</normaloff>:/qtutils/fugue/arrow-skip.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">find_replace_buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QToolButton" name="search_backwards_toolButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+          <normaloff>:/qtutils/fugue/arrow-skip-180.png</normaloff>:/qtutils/fugue/arrow-skip-180.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">find_replace_buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLineEdit" name="find_text_lineEdit"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Text to find:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLineEdit" name="replace_text_lineEdit"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Text to replace:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4" colspan="2">
+       <widget class="QCheckBox" name="wrap_search_checkBox">
+        <property name="text">
+         <string>Wrap search</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="replace_all_checkBox">
+        <property name="text">
+         <string>Replace all</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="replace_checkBox">
+        <property name="text">
+         <string>Replace</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4" colspan="3">
+       <widget class="QPushButton" name="do_search_pushButton">
+        <property name="text">
+         <string>Go!</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="6">
+       <widget class="QCheckBox" name="whole_word_checkBox">
+        <property name="text">
+         <string>Whole word</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::NoButton</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc"/>
+ </resources>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="find_replace_buttonGroup"/>
+ </buttongroups>
+</ui>

@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BLACS</class>
+ <widget class="QMainWindow" name="BLACS">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1030</width>
+    <height>723</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>blacs - the labscript suite</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/qtutils/custom/blacs.png</normaloff>:/qtutils/custom/blacs.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_13">
+    <item>
+     <layout class="QVBoxLayout" name="notifications">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="notifications_minimized">
+        <property name="spacing">
+         <number>3</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
+        </property>
+        <item>
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QSplitter" name="main_splitter">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="verticalLayoutWidget_2">
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinimumSize</enum>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="QueueGroupBox">
+          <property name="title">
+           <string>Queue Control</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="sizeConstraint">
+              <enum>QLayout::SetMinimumSize</enum>
+             </property>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="queue_push_to_top">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>20</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>20</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>push to top</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>:/qtutils/fugue/arrow-stop-090.png</normaloff>:/qtutils/fugue/arrow-stop-090.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="queue_push_up">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>20</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>20</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>push up</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>:/qtutils/fugue/arrow-090.png</normaloff>:/qtutils/fugue/arrow-090.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="queue_delete_button">
+               <property name="minimumSize">
+                <size>
+                 <width>20</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>20</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>delete selected</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>:/qtutils/fugue/cross-button.png</normaloff>:/qtutils/fugue/cross-button.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="queue_push_down">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>20</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>20</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>push down</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>:/qtutils/fugue/arrow-270.png</normaloff>:/qtutils/fugue/arrow-270.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="queue_push_to_bottom">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>20</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>20</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>push to bottom</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>:/qtutils/fugue/arrow-stop-270.png</normaloff>:/qtutils/fugue/arrow-stop-270.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QLabel" name="queue_status">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Shot progress</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QProgressBar" name="TimeNext_progressBar">
+               <property name="value">
+                <number>0</number>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+               <property name="textVisible">
+                <bool>true</bool>
+               </property>
+               <property name="invertedAppearance">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0,0,0">
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QComboBox" name="queue_repeat_comboBox">
+                 <property name="minimumSize">
+                  <size>
+                   <width>80</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>No repeat</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Repeat all</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Repeat last</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>Files retained while repeating: </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="repeats_spinBox">
+                 <property name="toolTip">
+                  <string>Number of distinct file names to keep while repeating (-1 for infinite)</string>
+                 </property>
+                 <property name="prefix">
+                  <string/>
+                 </property>
+                 <property name="maximum">
+                  <number>100000</number>
+                 </property>
+                 <property name="value">
+                  <number>2</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QueueTreeview" name="treeview">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>1</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="acceptDrops">
+                <bool>true</bool>
+               </property>
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="verticalScrollBarPolicy">
+                <enum>Qt::ScrollBarAlwaysOn</enum>
+               </property>
+               <property name="horizontalScrollBarPolicy">
+                <enum>Qt::ScrollBarAlwaysOff</enum>
+               </property>
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="dragDropMode">
+                <enum>QAbstractItemView::DropOnly</enum>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::ExtendedSelection</enum>
+               </property>
+               <property name="animated">
+                <bool>true</bool>
+               </property>
+               <attribute name="headerVisible">
+                <bool>true</bool>
+               </attribute>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="queue_pause_button">
+                 <property name="text">
+                  <string>Pause Queue</string>
+                 </property>
+                 <property name="icon">
+                  <iconset>
+                   <normaloff>:/qtutils/fugue/control-pause.png</normaloff>:/qtutils/fugue/control-pause.png</iconset>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="queue_abort_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Abort</string>
+                 </property>
+                 <property name="icon">
+                  <iconset>
+                   <normaloff>:/qtutils/fugue/control-stop-square.png</normaloff>:/qtutils/fugue/control-stop-square.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Analysis</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <layout class="QVBoxLayout" name="analysis"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="DynamicVariablesGroupBox">
+          <property name="title">
+           <string>Dynamic Variables</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="QTableWidget" name="Globals_tableWidget">
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="columnCount">
+              <number>2</number>
+             </property>
+             <attribute name="horizontalHeaderCascadingSectionResizes">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="horizontalHeaderHighlightSections">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string notr="true">Name</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string notr="true">Value</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <spacer name="horizontalSpacer_7">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="ClearDynamic_pushButton">
+               <property name="text">
+                <string>Clear variables</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>Devices</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QSplitter" name="tab_horizontal_splitter">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <widget class="QSplitter" name="tab_top_vertical_splitter">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <widget class="QWidget" name="widget_10" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_26">
+             <item>
+              <layout class="QVBoxLayout" name="tab_container_0"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="widget_11" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_27">
+             <item>
+              <layout class="QVBoxLayout" name="tab_container_1"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QSplitter" name="tab_bottom_vertical_splitter">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <widget class="QWidget" name="widget_12" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_28">
+             <item>
+              <layout class="QVBoxLayout" name="tab_container_2"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="widget_13" native="true">
+            <layout class="QVBoxLayout" name="verticalLayout_29">
+             <item>
+              <layout class="QVBoxLayout" name="tab_container_3"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1030</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAdd_to_queue"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpenPreferences"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Load front-panel</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save front-panel</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionOpenPreferences">
+   <property name="text">
+    <string>Preferences</string>
+   </property>
+  </action>
+  <action name="actionAdd_to_queue">
+   <property name="text">
+    <string>Add to queue</string>
+   </property>
+  </action>
+  <action name="actionEdit_Connection_Table">
+   <property name="text">
+    <string>Edit</string>
+   </property>
+  </action>
+  <action name="actionSelect_Globals">
+   <property name="text">
+    <string>Select Globals</string>
+   </property>
+  </action>
+  <action name="actionRecompile">
+   <property name="text">
+    <string>Recompile</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QueueTreeview</class>
+   <extends>QTreeView</extends>
+   <header>qtutils/widgets.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>queue_push_to_top</tabstop>
+  <tabstop>queue_push_up</tabstop>
+  <tabstop>queue_push_down</tabstop>
+  <tabstop>queue_push_to_bottom</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>activated()</signal>
+   <receiver>BLACS</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

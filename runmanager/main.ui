@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1192</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>runmanager - the labscript suite</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+    <normaloff>:/qtutils/custom/runmanager.png</normaloff>:/qtutils/custom/runmanager.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+     border: none;
+     padding: 4px;
+ }
+
+QPushButton:hover {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     border: 1px solid #8f8f91;
+     border-radius: 3px;
+ }
+
+ QPushButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+     border: 1px solid #8f8f91;
+     border-radius: 3px;
+ }
+
+QPushButton:checked {
+     background-color: #dadbde;
+     border: 1px solid #8f8f91;
+     border-radius: 3px;
+ }
+
+QPushButton:hover:checked {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+     border: 1px solid #8f8f91;
+     border-radius: 3px;
+ }
+
+QToolButton {
+     border: none;
+     padding: 2px;
+ }
+
+QToolButton:hover {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     border: 1px solid #8f8f91;
+     border-radius: 3px;
+ }
+
+ QToolButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+     border: 1px solid #8f8f91;
+     border-radius: 3px;
+ }
+
+QToolButton:checked {
+     background-color: #dadbde;
+     border: 1px solid #8f8f91;
+     border-radius: 3px;
+ }
+
+QToolButton:hover:checked {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+     border: 1px solid #8f8f91;
+     border-radius: 3px;
+ }
+</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <property name="leftMargin">
+     <number>3</number>
+    </property>
+    <property name="topMargin">
+     <number>3</number>
+    </property>
+    <property name="rightMargin">
+     <number>3</number>
+    </property>
+    <property name="bottomMargin">
+     <number>3</number>
+    </property>
+    <item>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Labscript setup</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_11">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <widget class="FingerTabWidget" name="tabWidget">
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTabBar{ font-size: 9pt }</string>
+           </property>
+           <property name="tabPosition">
+            <enum>QTabWidget::West</enum>
+           </property>
+           <property name="tabShape">
+            <enum>QTabWidget::Rounded</enum>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <property name="elideMode">
+            <enum>Qt::ElideRight</enum>
+           </property>
+           <property name="usesScrollButtons">
+            <bool>true</bool>
+           </property>
+           <property name="documentMode">
+            <bool>false</bool>
+           </property>
+           <property name="tabsClosable">
+            <bool>false</bool>
+           </property>
+           <property name="movable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="tab_file">
+            <attribute name="title">
+             <string>Script editor</string>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <widget class="SimplePythonEditor" name="script_SimplePythonEditor"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="tab_output">
+            <attribute name="icon">
+             <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+              <normaloff>:/qtutils/fugue/terminal.png</normaloff>:/qtutils/fugue/terminal.png</iconset>
+            </attribute>
+            <attribute name="title">
+             <string>Output</string>
+            </attribute>
+            <attribute name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;View textual output of compilation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_output_tab"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="tab_axes">
+            <attribute name="icon">
+             <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+              <normaloff>:/qtutils/custom/outer.png</normaloff>:/qtutils/custom/outer.png</iconset>
+            </attribute>
+            <attribute name="title">
+             <string>Axes</string>
+            </attribute>
+            <attribute name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;See and change settings for the axes of the currently described parameter space.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </attribute>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_axis_to_top">
+                 <property name="toolTip">
+                  <string>Move selected axis to top</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+                   <normaloff>:/qtutils/fugue/arrow-stop-090.png</normaloff>:/qtutils/fugue/arrow-stop-090.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_axis_up">
+                 <property name="toolTip">
+                  <string>Move selected axis up</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+                   <normaloff>:/qtutils/fugue/arrow-090.png</normaloff>:/qtutils/fugue/arrow-090.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_axis_down">
+                 <property name="toolTip">
+                  <string>Move selected axis down</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+                   <normaloff>:/qtutils/fugue/arrow-270.png</normaloff>:/qtutils/fugue/arrow-270.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_axis_to_bottom">
+                 <property name="toolTip">
+                  <string>Move selected axis to bottom</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+                   <normaloff>:/qtutils/fugue/arrow-stop-270.png</normaloff>:/qtutils/fugue/arrow-stop-270.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QScrollArea" name="scrollArea">
+               <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+               </property>
+               <property name="widgetResizable">
+                <bool>true</bool>
+               </property>
+               <widget class="QWidget" name="scrollAreaWidgetContents">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>510</width>
+                  <height>582</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QTreeView" name="treeView_axes"/>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="tab_groups">
+            <attribute name="icon">
+             <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+              <normaloff>:/qtutils/fugue/tables-stacks.png</normaloff>:/qtutils/fugue/tables-stacks.png</iconset>
+            </attribute>
+            <attribute name="title">
+             <string>Groups</string>
+            </attribute>
+            <attribute name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select files and groups of globals to view and edit in runviewer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout_8">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <property name="spacing">
+                <number>9</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="pushButton_open_globals_file">
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load an HDF file containing globals into runviewer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Open globals file</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+                   <normaloff>:/qtutils/fugue/folder-open-table.png</normaloff>:/qtutils/fugue/folder-open-table.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_new_globals_file">
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Create a new HDF file to store globals in.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>New globals file</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+                   <normaloff>:/qtutils/fugue/table--plus.png</normaloff>:/qtutils/fugue/table--plus.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_diff_globals_file">
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Compare the globals stored in an HDF5 file with those currently in use by runmanager.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Diff globals file</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+                   <normaloff>:/qtutils/fugue/tables.png</normaloff>:/qtutils/fugue/tables.png</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QScrollArea" name="scrollArea_2">
+               <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+               </property>
+               <property name="widgetResizable">
+                <bool>true</bool>
+               </property>
+               <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>539</width>
+                  <height>552</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="TreeView" name="treeView_groups">
+                   <property name="alternatingRowColors">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Sequence Infomation</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="1" column="0">
+          <widget class="QLabel" name="shotOutputFolderLabel">
+           <property name="text">
+            <string>Shot output folder</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_shot_output_folder">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The folder in which newly compiled shot files will be placed.&lt;/p&gt;&lt;p&gt;If the folder does not exist, it will be created at compile time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="frame">
+              <bool>false</bool>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="line_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="toolButton_select_shot_output_folder">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>Select folder ...</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QToolButton{
+    border: none;
+    background: white;
+    padding: 2px;
+}
+
+QToolButton:hover {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+ QToolButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }</string>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+               <normaloff>:/qtutils/fugue/folder-horizontal-open.png</normaloff>:/qtutils/fugue/folder-horizontal-open.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="toolButton_reset_shot_output_folder">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reset to default output folder.&lt;/p&gt;&lt;p&gt;If the folder does not exist it will be created at compile-time.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QToolButton{
+    border: none;
+    background: white;
+    padding: 2px;
+}
+
+QToolButton:hover {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+ QToolButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }</string>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+               <normaloff>:/qtutils/fugue/arrow-turn-180-left.png</normaloff>:/qtutils/fugue/arrow-turn-180-left.png</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="bLACSHostNameLabel">
+           <property name="text">
+            <string>BLACS Host Name</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit_BLACS_hostname">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The host computer running BLACS.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>localhost</string>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="sequenceIndexLabel_2">
+           <property name="text">
+            <string>Sequence Index</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <item>
+            <widget class="QPadSpinBox" name="spinBox_SequenceIndex">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Current sequence index. Any time you change something and resubmit the sequence index is incremented.  If you want to overwrite some shotes, de-increment the index&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>9999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="increment_checkBox">
+             <property name="toolTip">
+              <string>Update sequence index on engage.  If not depressed you will overwrite data.</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Increment sequence index</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="currentLabscriptFileLabel">
+           <property name="text">
+            <string>Current labscript file</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QFrame" name="frame">
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton{
+    background: rgb(224,224,224);
+    padding: 3px;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_labscript_file">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>The labscript file to compile.</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="frame">
+               <bool>false</bool>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_select_labscript_file">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Select a file ...</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton{
+    border: none;
+    background: white;
+    padding: 2px;
+}
+
+QToolButton:hover {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+ QToolButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+                <normaloff>:/qtutils/fugue/folder-open-document-text.png</normaloff>:/qtutils/fugue/folder-open-document-text.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="edit_current_labscript_toolButton">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Edit labscript file</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QToolButton{
+    border: none;
+    background: white;
+    padding: 2px;
+}
+
+QToolButton:hover {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+ }
+
+ QToolButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }</string>
+              </property>
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+                <normaloff>:/qtutils/custom/python-document.png</normaloff>:/qtutils/custom/python-document.png</iconset>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Sequence Notes</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="plainTextEdit_SequenceNotes">
+         <property name="minimumSize">
+          <size>
+           <width>500</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Courier</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Notes for next sequence</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton_engage">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Compile pending shots and submit them to BLACS if applicable.&lt;/p&gt;&lt;p&gt;Or, send the parameter space description to mise, if that option is selected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	 background-color: rgb(238,96,96,192);
+     border: 1px solid rgb(238,96,96,128);
+	  border-radius: 3px;
+     padding: 4px;
+ }
+
+QPushButton:hover {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #ff7878, stop: 1 #dd4848);
+     border: None;
+	 border-radius: 3px;
+ }
+
+ QPushButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dd4848, stop: 1 #ff7878);
+     border: 1px solid #8f8f91;
+     border-radius: 3px;
+ }</string>
+           </property>
+           <property name="text">
+            <string>Engage</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+             <normaloff>:/qtutils/fugue/control.png</normaloff>:/qtutils/fugue/control.png</iconset>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_restart_subprocess">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Forcefully restart the compilation subprocess, stopping any compilation in process.&lt;/p&gt;&lt;p&gt;This can be useful if the child process is misbehaving for any reason.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>Restart
+subprocess</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+             <normaloff>:/qtutils/fugue/arrow-circle-135-left.png</normaloff>:/qtutils/fugue/arrow-circle-135-left.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_shuffle">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Send compiled shots to BLACS in a random order, to prevent scanned parameters correlating with temporal drifts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>Shuffle</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+             <normaloff>:/qtutils/fugue/arrow-switch.png</normaloff>:/qtutils/fugue/arrow-switch.png</iconset>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_abort">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="toolTip">
+            <string>Stop compiling shots after the current shot is compiled.
+ To interrupt a compilation mid-shot, use the 'Restart subprocess' button</string>
+           </property>
+           <property name="text">
+            <string>Abort</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+             <normaloff>:/qtutils/fugue/cross-octagon.png</normaloff>:/qtutils/fugue/cross-octagon.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_run_shots">
+           <property name="toolTip">
+            <string>Send the shot files to BLACS after compilation</string>
+           </property>
+           <property name="text">
+            <string>Run shot(s)</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_view_shots">
+           <property name="toolTip">
+            <string>Open the shot files in runviewer after compilation</string>
+           </property>
+           <property name="text">
+            <string>View shot(s)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1192</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_Labscript_file"/>
+    <addaction name="actionOpen_Labscript_file"/>
+    <addaction name="actionSave_current_Labscript_file"/>
+    <addaction name="actionSave_current_Labscript_file_as"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoad_configuration"/>
+    <addaction name="actionRevert_configuration"/>
+    <addaction name="actionSave_configuration"/>
+    <addaction name="actionSave_configuration_as"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionFind_replace"/>
+    <addaction name="actionFind_replace_next"/>
+    <addaction name="actionGoto_line"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+  </widget>
+  <action name="actionLoad_configuration">
+   <property name="icon">
+    <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+     <normaloff>:/qtutils/fugue/folder-open.png</normaloff>:/qtutils/fugue/folder-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Load configuration</string>
+   </property>
+  </action>
+  <action name="actionSave_configuration_as">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+     <normaloff>:/qtutils/fugue/disk--plus.png</normaloff>:/qtutils/fugue/disk--plus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save configuration as...</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+     <normaloff>:/qtutils/fugue/cross-button.png</normaloff>:/qtutils/fugue/cross-button.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSave_configuration">
+   <property name="icon">
+    <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+     <normaloff>:/qtutils/fugue/disk.png</normaloff>:/qtutils/fugue/disk.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save configuration</string>
+   </property>
+  </action>
+  <action name="actionRevert_configuration">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+     <normaloff>:/qtutils/fugue/arrow-curve-180-left.png</normaloff>:/qtutils/fugue/arrow-curve-180-left.png</iconset>
+   </property>
+   <property name="text">
+    <string>Revert configuration</string>
+   </property>
+  </action>
+  <action name="actionSave_current_Labscript_file">
+   <property name="icon">
+    <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+     <normaloff>:/qtutils/fugue/document--pencil.png</normaloff>:/qtutils/fugue/document--pencil.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Labscript file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_current_Labscript_file_as">
+   <property name="icon">
+    <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+     <normaloff>:/qtutils/fugue/document--arrow.png</normaloff>:/qtutils/fugue/document--arrow.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Labscript file as...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionOpen_Labscript_file">
+   <property name="icon">
+    <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+     <normaloff>:/qtutils/fugue/folder-open-document.png</normaloff>:/qtutils/fugue/folder-open-document.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Labscript file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionFind_replace">
+   <property name="text">
+    <string>Find/replace</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionGoto_line">
+   <property name="text">
+    <string>Goto line</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionFind_replace_next">
+   <property name="text">
+    <string>Find/replace next...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionNew_Labscript_file">
+   <property name="icon">
+    <iconset resource="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc">
+     <normaloff>:/qtutils/fugue/document--plus.png</normaloff>:/qtutils/fugue/document--plus.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Labscript file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TreeView</class>
+   <extends>QTreeView</extends>
+   <header>qtutils/widgets.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FingerTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>qtutils/widgets.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QPadSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>qtutils/widgets.h</header>
+  </customwidget>
+  <customwidget>
+   <class>SimplePythonEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header>qtutils/widgets.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_labscript_file</tabstop>
+  <tabstop>toolButton_select_labscript_file</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>toolButton_axis_to_top</tabstop>
+  <tabstop>toolButton_axis_up</tabstop>
+  <tabstop>toolButton_axis_down</tabstop>
+  <tabstop>toolButton_axis_to_bottom</tabstop>
+  <tabstop>treeView_axes</tabstop>
+  <tabstop>pushButton_open_globals_file</tabstop>
+  <tabstop>pushButton_new_globals_file</tabstop>
+  <tabstop>pushButton_diff_globals_file</tabstop>
+  <tabstop>treeView_groups</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../Anaconda/Lib/site-packages/qtutils/icons/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

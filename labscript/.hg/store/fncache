@@ -1,0 +1,81 @@
+data/spinconfig.py.i
+data/docs/source/api_reference/clockline.rst.i
+data/docs/labscript-dev/clock_example.py.i
+data/control.py.old.i
+data/control.py.i
+data/docs/source/api_reference/intermediatedevice.rst.i
+data/docs/Makefile.i
+data/docs/source/conf.py.i
+data/functions.py.i
+data/source/labscript-dev/clock_example.py.i
+data/docs/source/introduction.rst.i
+data/docs/labscript-dev/main.pdf.i
+data/docs/labscript-dev/main.tex.i
+data/source/lyse/listing_1.py.i
+data/example.py.i
+data/test2.vi.i
+data/source/lyse/lyse.tex.i
+data/docs/labscript-dev/intermediatedevice_example.py.i
+data/spinapi.py.i
+data/deviceprogramming/novatech.py.i
+data/docs/labscript-dev/minted.sty.i
+data/deviceprogramming/spinconfig.py.i
+data/dummy.fresh.h5.i
+data/docs/source/api_reference/pseudoclock.rst.i
+data/utils/calibrate_shutters.py.i
+data/docs/source/connection_table.rst.i
+data/labscript.py.d
+data/icon.png.i
+data/utils/dummy.py.i
+data/devices/__init__.py.i
+data/LICENSE.txt.i
+data/devices/adwin.py.i
+data/utils/edit_connections.py.i
+data/source/labscript-dev/intermediatedevice_example.py.i
+data/utils/h5_from_globals.py.i
+data/source/lyse/listing_2.py.i
+data/control.old.py.i
+data/__init__.py.i
+data/source/lyse/lyse.pdf.d
+data/dummy.py.i
+data/devices/__init__.pyc.i
+data/analoguetest.py.i
+data/calibrations.h5.i
+data/novatech.py.i
+data/docs/Using the labscript API.docx.d
+data/source/lyse/listing_3.py.i
+data/source/lyse/gui.pdf.i
+data/icon.svg.i
+data/docs/source/index.rst.i
+data/devices/sr400photoncounter.py.i
+data/docs/source/api_reference/device.rst.i
+data/docs/source/api_reference/index.rst.i
+data/.hgignore.i
+data/docs/Using the labscript API.docx.i
+data/source/lyse/minted.sty.i
+data/reader.py.i
+data/deviceprogramming/pulseblaster.py.i
+data/source/BLACS/How to add a new device/main.tex.i
+data/docs/source/api_reference/pseudoclockdevice.rst.i
+data/labscript.py.i
+data/utils/dummy_template.h5.i
+data/source/labscript-dev/header.tex.i
+data/pulseblaster.py.i
+data/source/labscript-dev/minted.sty.i
+data/calibrate_shutters.py.i
+data/deviceprogramming/spinapi.py.i
+data/dummy_template.h5.i
+data/.hgtags.i
+data/README.md.i
+data/Using the labscript API.docx.i
+data/docs/make.bat.i
+data/source/lyse/header.tex.i
+data/Install Guide.docx.i
+data/docs/labscript-dev/header.tex.i
+data/source/lyse/lyse.pdf.i
+data/devices.py.i
+data/devices/photoncounter.py.i
+data/source/labscript-dev/main.tex.i
+data/Using the labscript API.docx.d
+data/source/BLACS/How to add a new device/pythonlisting.tex.i
+data/novatechserial.py.i

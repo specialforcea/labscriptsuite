@@ -1,0 +1,60 @@
+data/example.py.i
+data/icon.png.i
+data/edit_columns.ui.i
+data/docs/lyse.tex.i
+data/source/lyse/lyse.pdf.d
+data/timezones.py.i
+data/file_box.ui.i
+data/routine_box.py.i
+data/plot_icon.png.i
+data/source/lyse/lyse.tex.i
+data/source/labscript-dev/clock_example.py.i
+data/docs/listing_3.py.i
+data/routinebox.glade.i
+data/traces.py.i
+data/source/labscript-dev/header.tex.i
+data/source/BLACS/How to add a new device/main.tex.i
+data/figure_manager.py.i
+data/lyse.svg.i
+data/main.ui.i
+data/docs/header.tex.i
+data/new_plot_icon.png.i
+data/LICENSE.txt.i
+data/main_interface.glade.i
+data/main.pyw.i
+data/routine_box.ui.i
+data/plot_window.ui.i
+data/routinebox.ui.i
+data/dataframe_utilities.py.i
+data/__init__.py.i
+data/source/labscript-dev/intermediatedevice_example.py.i
+data/docs/listing_2.py.i
+data/analysis_subprocess.py.i
+data/docs/gui.pdf.i
+data/source/lyse/listing_1.py.i
+data/lyse.ico.i
+data/Install Guide.docx.i
+data/source/lyse/gui.pdf.i
+data/source/lyse/listing_3.py.i
+data/.hgignore.i
+data/__main__.py.i
+data/docs/minted.sty.i
+data/edit_columns.glade.i
+data/analysis_routine.py.i
+data/lyse.lnk.i
+data/source/lyse/listing_2.py.i
+data/docs/listing_1.py.i
+data/filebox.glade.i
+data/source/labscript-dev/minted.sty.i
+data/.hgtags.i
+data/README.md.i
+data/Using the labscript API.docx.i
+data/source/lyse/header.tex.i
+data/docs/lyse.pdf.d
+data/source/lyse/lyse.pdf.i
+data/source/lyse/minted.sty.i
+data/filebox.ui.i
+data/docs/lyse.pdf.i
+data/Using the labscript API.docx.d
+data/source/BLACS/How to add a new device/pythonlisting.tex.i
+data/source/labscript-dev/main.tex.i
